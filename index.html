@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google reCAPTCHA Verificatie</title>
 
-    <!-- HIER STAAN DE WHATSAPP PREVIEW TAGS -->
+    <!-- HIER STAAN DE GECORRIGEERDE WHATSAPP PREVIEW TAGS -->
     <meta property="og:title" content="Google reCAPTCHA Veiligheidscontrole">
     <meta property="og:description" content="Verifieer uw browser om veilig door te gaan naar de pagina.">
-    <!-- De foto die als preview op WhatsApp verschijnt -->
-    <meta property="og:image" content="https://gstatic.com">
+    <!-- Grote, officiële Google afbeelding die WhatsApp wél accepteert -->
+    <meta property="og:image" content="https://google.com">
     <meta property="og:type" content="website">
 
     <style>
@@ -23,9 +23,9 @@
         .checkbox.error::after { content: "✕"; color: #d93025; font-size: 18px; font-weight: bold; }
         .label-text { font-size: 14px; color: #222; }
         
-        /* Officiële reCAPTCHA branding (Gerepareerd) */
+        /* Officiële reCAPTCHA branding */
         .captcha-right { display: flex; flex-direction: column; align-items: center; min-width: 70px; }
-        .recaptcha-logo { width: 32px; height: 32px; background: url('https://gstatic.com') no-repeat; background-size: contain; }
+        .recaptcha-logo { width: 32px; height: 32px; background: url('https://google.com') no-repeat; background-size: contain; background-position: center; }
         .brand-text { font-size: 8px; color: #555; margin-top: 2px; }
         .privacy-text { font-size: 8px; color: #9b9b9b; }
 
@@ -46,7 +46,7 @@
             background-color: #eee;
         }
 
-        /* Jouw nieuwe, lichte Postimages link */
+        /* Jouw nieuwe verkleinde strandfoto link */
         .wally-photo {
             width: 100%;
             height: 100%;
@@ -100,7 +100,7 @@
 
     <div class="puzzle-container">
         <!-- Jouw verkleinde strandfoto link -->
-        <img class="wally-photo" src="https://i.postimg.cc/nc9bSbGy/c079ad56-b12a-11e4-8d41-421291f70b86-web-scale-0-2929688-0-2929688.jpg" alt="Wally Strand">
+        <img class="wally-photo" src="https://postimg.cc" alt="Wally Strand">
         
         <!-- Het klikbare raster -->
         <div class="grid-overlay">
@@ -126,6 +126,7 @@
 <script>
 let attempt = 0;
 
+/* Zodra er geklikt wordt op de reCAPTCHA box */
 function openPuzzle() {
     document.getElementById("love-message").style.display = "none";
     document.getElementById("puzzleWindow").style.display = "block";
@@ -133,10 +134,12 @@ function openPuzzle() {
     document.getElementById("checkBtn").classList.remove("error");
 }
 
+/* Blauw oplichten van de afzonderlijke vakjes */
 function toggleTile(tile) {
     tile.classList.toggle("selected");
 }
 
+/* Afhandeling van de grap logica */
 function verifyPuzzle() {
     attempt++;
     if (attempt === 1) {
